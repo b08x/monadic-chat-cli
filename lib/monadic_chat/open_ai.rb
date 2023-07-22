@@ -26,7 +26,9 @@ module OpenAI
       "gpt-4-32K" => "chat/completions",
       "gpt-4-32k-0314" => "chat/completions",
       "gpt-3.5-turbo" => "chat/completions",
-      "gpt-3.5-turbo-0301" => "chat/completions"
+      "gpt-3.5-turbo-0301" => "chat/completions",
+      "gpt-3.5-turbo-16k-0613" => "chat/completions",
+      "gpt-3.5-turbo-16k" => "chat/completions"
     }[model]
   end
 
@@ -45,6 +47,8 @@ module OpenAI
     when "get"
       res = http.timeout(timeout_sec).get(target_uri)
     end
+
+    
 
     if query["stream"]
       json = nil
