@@ -30,7 +30,9 @@ class MonadicApp
     json = File.read(template_json)
                .gsub("{{DATETIME}}", Time.now.strftime("%Y-%m-%d %H:%M:%S"))
                .gsub("{{DATE}}", Time.now.strftime("%Y-%m-%d"))
+
     @messages_initial = JSON.parse(json)["messages"]
+
     @messages = @messages_initial.dup
     @turns = 0
     @template_initial = File.read(template_md)

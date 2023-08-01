@@ -1,23 +1,18 @@
 {"messages": [
   {"role": "system",
-   "content": "You are an English syntactic/semantic/pragmatic analyzer. Analyze the new prompt from the user and execute a syntactic parsing. Give your response in a variation of the penn treebank format, but use brackets [ ] instead of parentheses ( ). Also, give your response in a markdown code span. Let the user know if parsing the given sentence is impossible."
+   "content": "You are an English syntactic/semantic/pragmatic analyzer. Analyze the new prompt from the user and execute a syntactic parsing. Give your response in a variation of the penn treebank format, but use brackets [ ] instead of parentheses ( ). Also, give your response in a markdown code span. Let the user know if parsing the given sentence is impossible. Make note of ambiguous phrasing, syntactic structures that could be misinterpreted, or semantic ambiguity. Provide assessment on potential interferance words or phrases. Deviations from the established patterns, such as incorrect verb usage, missing or incorrect noun phrases, improper formation or omission of prepositional or participial phrases, and flawed gerund phrases, can lead to inconsistencies and false responses"
   },
   {"role": "user",
    "content": "\"We saw a beautiful sunset.\""
   },
   {"role": "assistant",
-   "content": "`[S [NP He] [VP [V saw] [NP [det a] [N' [Adj beautiful] [N sunset] ] ] ] ]`"
+   "content": "`[S [NP He] [VP [V saw] [NP [det a] [N' [Adj beautiful] [N sunset] ] ] ] ]`\n\nSyntactic analysis:\n\n
+   The main clause consists of a subject and a verb phrase. The subject (NP) is \"We,\" which is a pronoun referring to the speaker(s). The verb phrase (VP) is \"saw a beautiful sunset.\" The main verb is \"saw,\" which is in the past tense (VBD). The object of the verb is the noun phrase (NP) \"a beautiful sunset,\" which consists of a determiner (DT) \"a,\" an adjective (JJ) \"beautiful,\" and a noun (NN) \"sunset.\"Semantic analysis: The sentence states an event in the past where \"We\" observed a \"beautiful sunset.\" Pragmatic analysis: The sentence is straightforward and doesn't exhibit any clear pragmatic ambiguity. Note: The given sentence is unambiguous and can be parsed correctly without any issues or syntactic ambiguity."
   },
   {"role": "user",
    "content": "\"We didn't take a picture.\""
   },
   {"role": "assistant",
-   "content": "`[S [NP We] [IP [I didn't] [VP [V take] [NP [Det a] [N picture] ] ] ] ] ]`"
-  },
-  {"role": "user",
-   "content": "\"We didn't have a camera.\""
-  },
-  {"role": "assistant",
-   "content": "`[S [NP We] [IP [I didn't] [VP [V have] [NP [Det a] [N camera] ] ] ] ] ]`"
+   "content": "`[S [NP We] [IP [I didn't] [VP [V take] [NP [Det a] [N picture] ] ] ] ] ]`Syntactic analysis: The main clause consists of a subject and a verb phrase. The subject (NP) is \"We,\" which is a pronoun referring to the speaker(s). The verb phrase (VP) is \"did n't take the picture.\" The main verb is \"did,\" which is in the past tense (VBD). The negation adverb \"n't\" modifies the main verb \"did.\" The verb phrase \"did n't take the picture\" is composed of a verb \"take\" in its base form (VB) and an object noun phrase \"the picture,\" which consists of a determiner (DT) \"the\" and a noun (NN) \"picture.\" Semantic analysis: The sentence states that \"We\" did not perform the action of \"taking the picture.\" Pragmatic analysis: The sentence seems straightforward and does not exhibit any clear pragmatic ambiguity. Note: The given sentence is unambiguous and can be parsed correctly without any issues or syntactic ambiguity."
   }
 ]}

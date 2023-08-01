@@ -3,6 +3,7 @@
 require_relative "../../lib/monadic_app"
 
 class Steve < MonadicApp
+  include Logging
   DESC = "Monadic Chat app (steve)"
   COLOR = "white" # green/yellow/read/blue/magenta/cyan/white
 
@@ -64,6 +65,8 @@ class Steve < MonadicApp
                 @messages.size > 1,
                 @messages.size > @num_retained_turns * 2 + 1
               ]
+
+              logger.debug(conditions)
 
               if conditions.all?
                 to_delete = []

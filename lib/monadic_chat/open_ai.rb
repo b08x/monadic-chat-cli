@@ -48,8 +48,6 @@ module OpenAI
       res = http.timeout(timeout_sec).get(target_uri)
     end
 
-    
-
     if query["stream"]
       json = nil
       res.body.each do |chunk|

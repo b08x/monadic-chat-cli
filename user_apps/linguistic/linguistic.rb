@@ -2,6 +2,11 @@
 
 require_relative "../../lib/monadic_app"
 
+# - a larger temperature value to generate more diverse results.
+# - a larger `max_tokens` value to generate longer output.
+# - a smaller `frequency_penalty` value to encourage the model to use more diverse vocabulary.
+# - a larger `presence_penalty` value to discourage the model from repeating itself.
+
 class Linguistic < MonadicApp
   DESC = "Linguistic Analysis App (experimental)"
   COLOR = "red"
@@ -11,12 +16,12 @@ class Linguistic < MonadicApp
   def initialize(openai_completion, research_mode: false, stream: true, params: {})
     @num_retained_turns = 10
     params = {
-      "temperature" => 0.0,
-      "top_p" => 1.0,
-      "presence_penalty" => 0.0,
-      "frequency_penalty" => 0.0,
+      "temperature" => 0.7,
+      "top_p" => 0.8,
+      "presence_penalty" => 0.5,
+      "frequency_penalty" => 0.2,
       "model" => research_mode ? SETTINGS["research_model"] : SETTINGS["normal_model"],
-      "max_tokens" => 1000,
+      "max_tokens" => 4096,
       "stream" => stream,
       "stop" => nil
     }.merge(params)

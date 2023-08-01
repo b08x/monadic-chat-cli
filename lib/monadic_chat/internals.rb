@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class MonadicApp
+  include Logging
   ##################################################
   # methods for preparation and updating
   ##################################################
@@ -52,6 +53,7 @@ class MonadicApp
       res["messages"] = @messages
       res
     when :normal
+      logger.debug(@messages)
       @messages
     end
   end
@@ -102,6 +104,9 @@ class MonadicApp
     when :normal
       @messages << { "role" => input_role, "content" => input }
       params["messages"] = @messages
+
+      logger.debug("method: prepare_params\n\n#{params}")
+      # here may be a good spot to insert calls to a vectordb
     end
 
     @update_proc.call unless input_role == "system"
@@ -140,6 +145,7 @@ class MonadicApp
   ##################################################
 
   def bind(input, role: "user", num_retrials: 0)
+
     case role
     when "user"
       @turns += 1
@@ -149,6 +155,7 @@ class MonadicApp
 
     print PROMPT_ASSISTANT.prefix, "\n"
     params = prepare_params(role, input)
+    logger.debug("#{role}....#{input}")
     research_mode = @mode == :research
 
     escaping = +""
@@ -198,6 +205,8 @@ class MonadicApp
                   { role: "assistant", content: @mode == :researh ? unit(res) : res }
                 end
               end
+
+    
 
     update_template(message[:content], message[:role])
 

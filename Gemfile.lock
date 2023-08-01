@@ -45,26 +45,26 @@ GEM
     llhttp-ffi (0.4.0)
       ffi-compiler (~> 1.0)
       rake (~> 13.0)
-    oj (3.14.3)
+    oj (3.15.0)
     pastel (0.8.0)
       tty-color (~> 0.5)
-    public_suffix (5.0.1)
+    public_suffix (5.0.3)
     rake (13.0.6)
-    rexml (3.2.5)
-    rouge (4.1.0)
+    rexml (3.2.6)
+    rouge (4.1.2)
     rspec (3.12.0)
       rspec-core (~> 3.12.0)
       rspec-expectations (~> 3.12.0)
       rspec-mocks (~> 3.12.0)
-    rspec-core (3.12.1)
+    rspec-core (3.12.2)
       rspec-support (~> 3.12.0)
-    rspec-expectations (3.12.2)
+    rspec-expectations (3.12.3)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
-    rspec-mocks (3.12.5)
+    rspec-mocks (3.12.6)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
-    rspec-support (3.12.0)
+    rspec-support (3.12.1)
     strings (0.2.1)
       strings-ansi (~> 0.2)
       unicode-display_width (>= 1.5, < 3.0)
@@ -106,8 +106,7 @@ GEM
     wisper (2.0.1)
 
 PLATFORMS
-  ruby
-  x86_64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   bundler
@@ -116,4 +115,4 @@ DEPENDENCIES
   rspec
 
 BUNDLED WITH
-   2.4.10
+   2.4.1
