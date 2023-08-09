@@ -154,8 +154,11 @@ class MonadicApp
     end
 
     print PROMPT_ASSISTANT.prefix, "\n"
-    params = prepare_params(role, input)
+
     logger.debug("#{role}....#{input}")
+
+    params = prepare_params(role, input)
+
     research_mode = @mode == :research
 
     escaping = +""
@@ -206,7 +209,7 @@ class MonadicApp
                 end
               end
 
-    
+
 
     update_template(message[:content], message[:role])
 
