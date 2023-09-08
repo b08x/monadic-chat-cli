@@ -23,7 +23,7 @@ JSON:
 
 Make sure the following content requirements are all fulfilled: ###
 - keep the value of the "mode" property at "linguistic"
-- create your response to the new prompt based on "PMESSAGES" and set it to "response"
+- create your response to the new prompt based on "MESSAGES" and set it to "response"
 - analyze the new prompt's sentence type and set a sentence type value such as "interrogative", "imperative", "exclamatory", or "declarative" to the "sentence_type" property
 - analyze the new prompt's sentiment and set one or more sentiment types such as "happy", "excited", "troubled", "upset", or "sad" to the "sentiment" property
 - summarize the user's messages so far and update the "summary" property with a text of fewer than 100 words using as many discourse markers such as "because", "therefore", "but", and "so" to show the logical connection between the events.
@@ -33,7 +33,7 @@ Make sure the following content requirements are all fulfilled: ###
 Make sure the following formal requirements are all fulfilled: ###
 - do not use invalid characters in the JSON object
 - escape double quotes and other special characters in the text values in the resulting JSON object
-- check the validity of the generated JSON object and correct any possible parsing problems before returning it 
+- check the validity of the generated JSON object and correct any possible parsing problems before returning it
 ###
 
 Return your response consisting solely of the JSON object wrapped in "<JSON>\n" and "\n</JSON>" tags.
