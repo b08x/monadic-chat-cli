@@ -32,5 +32,10 @@
 
 ## [0.3.5] - 2023-04-05
 
-- `Wikipedia` app added (experimental, requires GPT-4)
+- `Wikipedia` app added (experimental)
 - `monadic-chat new/del app_name` command added
+
+## [0.3.7] - 2023-10-08
+
+- Default model changed to `gpt-3.5-turbo-0613`
+- Stability improvement
